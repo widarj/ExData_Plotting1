@@ -8,7 +8,7 @@ dev.set(3)
 
 png("plot1.PNG", width = 480, height = 480)
 
-hist(myPowerConsumption$Global_active_power, col="red", xlab="Global Active Power (kilowatts)", main = "Global Active Power", breaks = 10, xlim=c(0,6000), labels=c("0", "1", "2","3", "4", "5", "6"))
+hist(myPowerConsumption$Global_active_power, col="red", xlab="Global Active Power (kilowatts)", main = "Global Active Power", breaks = 10, xlim=c(0,6000))
 
 dev.off()
 
