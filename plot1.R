@@ -8,8 +8,11 @@ dev.set(3)
 
 png("plot1.PNG", width = 480, height = 480)
 
-hist(myPowerConsumption$Global_active_power, col="red", xlab="Global Active Power (kilowatts)", main = "Global Active Power", breaks = 10, xlim=c(0,6000))
+Sys.setlocale("LC_ALL","English")
 
+myPowerConsumption$Global_active_power <- myPowerConsumption$Global_active_power / 1000
+#hist(myPowerConsumption$Global_active_power, col="red", xlab="Global Active Power (kilowatts)", main = "Global Active Power", breaks = seq(as.integer(min(myPowerConsumption$Global_active_power)), as.integer(max(myPowerConsumption$Global_active_power), length.out=11)))  #, breaks = 12, xlim=c(0,6000))
+hist(myPowerConsumption$Global_active_power, col="red", xlab="Global Active Power (kilowatts)", main = "Global Active Power")
 dev.off()
 
 
