@@ -4,7 +4,7 @@ myPowerConsumption <- subset(powerconsumption, Date == "1/2/2007" | Date == "2/2
 
 dev.set(3)
 
-png("plot2.PNG", width = 480, height = 480)
+png("plot3.PNG", width = 480, height = 480)
 
 #hist(as.double(myPowerConsumption$Global_active_power), col="red", xlab="Global Active Power (kilowatts)", main = "Global Active Power")
 
@@ -20,7 +20,12 @@ datetime <- strptime(datetime,"%e/%m/%Y %H:%M:%S")
 #myTable <- table(myPowerConsumption$Day, myPowerConsumption$Global_active_power)
 #myPowerConsumption$Date <- as.factor(weekdays(as.Date(myPowerConsumption$Date)))
 
-plot(datetime, myPowerConsumption$Global_active_power, type="l", ylab="Global Active Power (kilowatts)", xlab="", main="Global Active Power (kilowatts)")
+plot(datetime, myPowerConsumption$Sub_metering_1, type="l", ylab="Energy sub metering", xlab="", col="grey")
+lines(datetime, myPowerConsumption$Sub_metering_2, col="red")
+lines(datetime, myPowerConsumption$Sub_metering_3, col="blue")
+
+legend("topright", legend=c("Sub metering_1", "Sub metering_2", "Sub metering_3"),
+       col=c("grey", "red","blue"), lty=1:1)
 
 #xpos <- as.POSIXct(paste(myPowerConsumption$Date, myPowerConsumption$Time), format="%Y-%m-%d %H:%M:%S")
 
