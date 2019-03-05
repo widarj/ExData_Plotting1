@@ -4,8 +4,6 @@ myPowerConsumption <- subset(powerconsumption, Date == "1/2/2007" | Date == "2/2
 
 myPowerConsumption$Global_active_power  <- as.numeric(myPowerConsumption$Global_active_power) 
 
-#Sys.setlocale("LC_TIME","en_US")
-
 dev.set(3)
 
 png("plot1.PNG", width = 480, height = 480)
